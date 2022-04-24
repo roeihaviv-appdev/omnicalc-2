@@ -45,4 +45,20 @@ class ApplicationController < ActionController::Base
     render({ :template => "math_templates/multiply_results.html.erb"})
   end
 
+  ###
+
+  def blank_divide_form
+
+    render({ :template => "math_templates/divide_form.html.erb"})
+  end
+
+  def blank_divide_results
+
+    @num1 = params.fetch("num1").to_f
+    @num2 = params.fetch("num2").to_f
+    @result_divide = @num1 / @num2
+
+    render({ :template => "math_templates/divide_results.html.erb"})
+  end
+
 end
